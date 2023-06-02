@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+.row {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 15% 85%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.col1{
+  background: #aeb5bd;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.col2{
+  background: #000701;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list {
+  list-style-type: none;
+  padding: 2px;
+}
+
+.list div {
+  padding: 8px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* home page css  */
+
+.home{
+  margin-left: 2%;
+  margin-right: 2%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.scenario-dropdown {
+  width: 200px;
+  margin-bottom: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.scenario-dropdown label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scenario-dropdown select {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid rgb(91, 159, 202);
+  border-radius: 4px;
+  background-color: rgb(63, 62, 62);
+  color: white;
 }
+
+/* table component styles */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+
+thead th {
+  padding: 10px;
+}
+
+tbody {
+  background-color: #e6e3e3;
+  color: black;
+}
+
+tbody td {
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+tbody i {
+  color: rgb(0, 0, 0);
+}
+
+table, th, td {
+  border: none;
+  border-bottom: 1px solid rgb(47, 46, 46);
+}
+
+/* // button component */
+
+.my-btn button{
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+
+.blue-btn{
+  background: rgb(28, 124, 209)
+}
+
+.green-btn{
+  background: rgb(6, 168, 71)
+}
+
+.orange-btn{
+  background: rgb(223, 156, 54)
+}
+
+.sim-btns{
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: end;
+}
+
+
+
+.sim-container{
+  margin-top: 20px;
+  border: 3px solid rgb(4, 108, 4);
+  height: 60vh;
+  width: 100%;
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.box{
+  
+  /* center the cell content */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: Arial;
+  font-weight: bold;
+  color: white;
+  border: 1px solid rgb(5, 70, 5);
+
+}
+
+
+.red-border, .focused{
+  border: 1px solid red;
+}
+
+.white-border{
+  border: 1px solid rgb(255, 255, 255);
+}
+
+
+.highlight{
+  background: #d9d9d9;
+  color: #186584;
+}
+
+.add-scenario-container{
+  margin: 0px 50px;
+  color: white;
+}
+
+.add-scenario-box{
+  background: #333333;
+  height: 20vh;
+  width: 100%;
+}
+
+.add-scenario-input-container{
+  display: flex;
+  padding: 0px 50px;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+
+.input-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box label{
+  font-weight: 450;
+}
+
+#myInput{
+  height: 28px;
+  width: 260px;
+ 
+  background-color: rgb(31, 31, 31);
+  margin-top: 10px;
+  color: rgb(178, 175, 175);;
+}
+
+
+
+.add-scenario-btns{
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.add-scenario-btns button{
+  width: 100px;
+}
+
+
+.input-box {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.tooltip {
+  visibility: visible;
+  background-color: #ea1e1e;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  left: 20%;
+  opacity: 1;
+}
+
+
