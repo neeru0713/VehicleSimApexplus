@@ -29,6 +29,7 @@ export const AddScenario = () => {
       if(btn === 'Add'){
         if (inputValue1.trim() === '') {
           setShowError1(true);
+          
         } else {
           console.log('Form submitted');
         }
@@ -38,6 +39,30 @@ export const AddScenario = () => {
         } else {
           console.log('Form submitted');
         }
+
+        if(!showError1 && !showError2) {
+          let url = "http://localhost:3000/scenarios";
+          let data = {
+            name: inputValue1,
+            time: inputValue2 + 's',
+            vehicles: 0
+          }
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              // Add any other headers if required
+            },
+            body: JSON.stringify(data), // Convert the data to JSON string
+          })
+            .then(response => response.json())
+            .then(data => {
+              alert('Scenario added successfully')
+            })
+            .catch(error => {
+              alert(error)
+            });
+        }
       }
 
       if(btn === 'Reset'){
@@ -46,8 +71,6 @@ export const AddScenario = () => {
         setShowError1(false);
         setShowError2(false);
       }  
-
-      
     };
 
     

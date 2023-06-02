@@ -1,45 +1,39 @@
-import React from 'react'
+import React from 'react';
+import { BsFillTrash3Fill } from 'react-icons/bs';
+import { BiEditAlt } from 'react-icons/bi';
+import { HiPlusCircle } from 'react-icons/hi';
 
-export const Table = () => {
+
+
+export const Table = ({ headerData, tableData }) => {
   return (
-    <div className="table">
-        <table>
-            <thead>
-                <tr>
-                <th>Vehicle Id</th>
-                <th>Vehicle Name</th>
-                <th>Speed</th>
-                <th>Position X</th>
-                <th>Position Y</th>
-                <th>Direction</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Car A</td>
-                    <td>50</td>
-                    <td>10</td>
-                    <td>20</td>
-                    <td>North</td>
-                    <td><i class="fas fa-edit"></i></td>
-                    <td><i class="fas fa-trash"></i></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Car B</td>
-                    <td>60</td>
-                    <td>15</td>
-                    <td>25</td>
-                    <td>South</td>
-                    <td><i class="fas fa-edit"></i></td>
-                    <td><i class="fas fa-trash"></i></td>
-                </tr>
-            </tbody>
-        </table>
+    <table>
+      <thead>
+        <tr>
+          {headerData.map((header, index) => (
+            <th key={index}>{header}</th>
+          ))}
+          <th>Vehicle</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.map((row, rowIndex) => (
+          <tr key={rowIndex}>
+           
+              <td>{row.id}</td>
+              <td>{row.name}</td>
+              <td>{row.time}</td>
+              <td>{row.vehicles}</td>
 
-    </div>
-  )
-}
+              <td><HiPlusCircle/></td>
+              <td><BiEditAlt/></td>
+              <td><BsFillTrash3Fill/></td>
+           
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};

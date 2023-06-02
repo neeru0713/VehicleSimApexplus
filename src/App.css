@@ -37,19 +37,19 @@
   flex-direction: column;
 }
 
-.scenario-dropdown {
+.dropdown {
   width: 200px;
   margin-bottom: 10px;
   color: white;
 }
 
-.scenario-dropdown label {
+.dropdown label {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
 }
 
-.scenario-dropdown select {
+.dropdown select {
   width: 100%;
   padding: 5px;
   border: 2px solid rgb(91, 159, 202);
@@ -193,8 +193,7 @@ table, th, td {
 
 #myInput{
   height: 28px;
-  width: 260px;
- 
+  width: 195px;
   background-color: rgb(31, 31, 31);
   margin-top: 10px;
   color: rgb(178, 175, 175);;
@@ -206,8 +205,9 @@ table, th, td {
   margin-top: 30px;
   display: flex;
   gap: 20px;
-  width: 100%;
+  width: 100%
 }
+
 .add-scenario-btns button{
   width: 100px;
 }
@@ -228,8 +228,49 @@ table, th, td {
   position: absolute;
   z-index: 1;
   top: 110%;
-  left: 20%;
+  left: 9%;
   opacity: 1;
+  width: 200px;
 }
 
+.all-scenarios-header{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+
+.all-scenarios{
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+}
+
+.all-scenario-btns{
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.all-scenario-btns button{
+  width: 130px;
+}
+
+.add-vehicle{
+  color: white;
+  margin: 0 50px;
+}
+
+
+.add-vehicle-box{
+  display: flex;
+  flex-direction: column;
+  background: #333333;
+  height: 40vh;
+  width: 100%;
+}
+
+#myDropdown{
+  height: 32px;
+  margin-top: 6px;
+}
 

@@ -1,0 +1,48 @@
+{
+  "scenarios": [
+    {
+      "id": 1,
+      "name": "Test Scenario",
+      "time": "2s",
+      "vehicles": 3
+    },
+    {
+      "name": "abc",
+      "time": "2s",
+      "id": 2,
+      "vehicles": 1
+    },
+    {
+      "name": "neeru",
+      "time": "5s",
+      "id": 3,
+      "vehicles": 2,
+      "vehiclesArray": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "rishu",
+      "time": "2s",
+      "vehicles": 0,
+      "id": 4
+    },
+    {
+      "name": "dvv",
+      "time": "s",
+      "vehicles": 0,
+      "id": 5
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Test Scenario",
+      "speed": "2",
+      "posx": "",
+      "posy": "",
+      "dir": ""
+    }
+  ]
+}

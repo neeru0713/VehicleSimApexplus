@@ -10,7 +10,7 @@ export const InputBox = ({ label, value, onChange, showError }) => {
             type="text"
             id="myInput"
             value={value}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e) => onChange(e.target.value, label)}
             className = {showError ? "red-border" : "white-border"}
         />
          <div className = {showError ? "tooltip" : null}>

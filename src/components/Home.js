@@ -1,19 +1,34 @@
-import React from 'react'
+import React , {useState, useEffect} from 'react'
 import {Table} from './Table.js'
 import { Button } from './Button.js'
+import { SelectBox } from './SelectBox.js'
 
 export const Home = () => {
+    const [scenarios, setScenarios] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch('http://localhost:3000/scenarios');
+            const jsonData = await response.json();
+            setScenarios(jsonData);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []); // Empty dependency array to run the effect only once
+
   return (
     <div className="home">
-        <div className="scenario-dropdown">
-            <label for="myDropdown">Scenario</label>
-            <select id="myDropdown">
-                <option value="option1">Test Scenario</option>
-                <option value="option2">My Scenario</option>
-            </select>
-        </div>
+        
+        <SelectBox
+        label="Scenario"
+        options={scenarios.map(scenario => scenario.name)}
+        >
+        </SelectBox>
 
-        <Table></Table>
+        {/* <Table></Table> */}
 
         <div className="sim-btns">
             <Button
