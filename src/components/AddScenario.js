@@ -114,6 +114,7 @@ export const AddScenario = () => {
             text="Go Back"
             color="blue"
             setBtnClicked={setBtnClicked}
+            link="/"
             ></Button>
 
         </div>

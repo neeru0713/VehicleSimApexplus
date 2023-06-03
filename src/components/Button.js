@@ -1,22 +1,24 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export const Button = ({text, color, setBtnClicked}) => {
+export const Button = ({text, color, setBtnClicked, link}) => {
     const handleClick = (e) => {
         setBtnClicked(e.target.innerText)
     }
     return (
         <div className="my-btn">
+            
             {
                 
-            text === 'Go Back' 
+            link 
             
             ? 
             
-            <Link to="/"><button
+            <Link to={link}><button
             className={`${color}-btn`}
-            >{text}</button> </Link>
+            >{text}</button> </Link> 
 
+           
             : 
 
             <button
