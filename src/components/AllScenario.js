@@ -33,6 +33,27 @@ export const AllScenario = () => {
     }
   };
 
+  const updateScenario = async (scenarioId, newName, newTime) => {
+    try {
+      const response = await fetch(`http://localhost:3000/scenarios/${scenarioId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: newName, time: newTime+'s', vehicles: 0 }),
+      });
+  
+      if (response.ok) {
+        console.log('Scenario updated successfully');
+        fetchScenarios()
+      } else {
+        console.error('Failed to update scenario');
+      }
+    } catch (error) {
+      console.error('Error updating scenario:', error);
+    }
+  };
+
   const deleteScenario = async (id) => {
     handleDelete(id)
   }
@@ -79,6 +100,7 @@ export const AllScenario = () => {
       tableData={data}
       tableName="scenarios"
       handleDelete={deleteScenario}
+      updateHandler={updateScenario}
       ></Table>
     </div>
   )

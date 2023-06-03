@@ -7,8 +7,7 @@ export const InputBox = ({ label, value, onChange }) => {
 
   const handleChange = (e) => {
 
-    debugger
-    let val = e.target.value
+    let val = e.target?.value
 
     if(val === ''){
       setShowErr(true)
