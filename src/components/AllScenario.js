@@ -11,8 +11,21 @@ export const AllScenario = () => {
     try {
       const response = await fetch('http://localhost:3000/scenarios');
       const jsonData = await response.json();
+      
       setData(jsonData);
     } catch (error) {
+      setData([{
+        "name": "Scenario 1",
+        "time": "8s",
+        "vehicles": 0,
+        "id": 1
+      },
+      {
+        "name": "scenario 2",
+        "time": "4s",
+        "vehicles": 0,
+        "id": 2
+      }])
       console.error('Error fetching data:', error);
     }
   };

@@ -54,6 +54,35 @@ export const Home = () => {
             throw new Error('Failed to retrieve vehicles');
           }
         } catch (error) {
+          setVehicles([
+            {
+              "name": "Audi R8",
+              "posx": "361",
+              "posy": "144",
+              "speed": "150",
+              "direction": "Upwards",
+              "scenarioId": "1",
+              "id": 1
+            },
+            {
+              "name": "BMW 3",
+              "posx": "100",
+              "posy": "300",
+              "speed": "230",
+              "direction": "Downwards",
+              "scenarioId": "1",
+              "id": 2
+            },
+            {
+              "name": "Bullet",
+              "posx": "178",
+              "posy": "264",
+              "speed": "120",
+              "direction": "Towards",
+              "scenarioId": "1",
+              "id": 3
+            }
+          ])
           console.error('Error retrieving vehicles:', error);
         }
       };
