@@ -1,19 +1,42 @@
 import React, { useState } from 'react';
 
-export const InputBox = ({ label, value, onChange, showError }) => {
+export const InputBox = ({ label, value, onChange }) => {
   const [error, setError] = useState('Value cannot be empty')
   const [showErr, setShowErr] = useState(false)
+
+
   const handleChange = (e) => {
+
+    debugger
     let val = e.target.value
+
     if(val === ''){
       setShowErr(true)
-    }
-    if(label === 'Position X'){
-      if(!isNaN(val)){
+      setError("Value cannot be empty")
+    } else if(label === 'Position X' || label === 'Position Y'){
+      let inpval = parseInt(val)
+      
+      if(isNaN(inpval)){
         setShowErr(true)
-        setError("Value cannot be empty")
+        setError("position must be a number")
+      } else {
+        if(val < 0 || val > 800){
+          setShowErr(true)
+          setError(`${label} should not be > 800 or < 0`)
+        } else {
+          if(val < 0 || val > 800){
+            setShowErr(true)
+            setError(`${label} should not be > 800 or < 0`)
+          } else{
+            setShowErr(false)
+          }
+        }
       }
+        
+    } else {
+      setShowErr(false)
     }
+
     onChange(val, label)
   }
 
@@ -26,10 +49,10 @@ export const InputBox = ({ label, value, onChange, showError }) => {
             id="myInput"
             value={value}
             onChange={handleChange}
-            className = {showError ? "red-border" : "white-border"}
+            className = {showErr ? "red-border" : "white-border"}
         />
-         <div className = {showError ? "tooltip" : null}>
-          {showError && <div className="error-message">Input cannot be empty</div>}
+         <div className = {showErr ? "tooltip" : null}>
+          {showErr && <div className="error-message">{error}</div>}
          </div>
         
         

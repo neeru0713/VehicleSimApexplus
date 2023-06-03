@@ -8,13 +8,10 @@ export const AddVehicle = () => {
   const [data, setData] = useState([]);
   const [scenario, setScenario] = useState("1");
   const [vehicleName, setVehicleName] = useState('');
-  const [showErrorVehicleName,setShowErrorVehicleName] = useState(false);
   const [speed, setSpeed] = useState('');
-  const [showErrorSpeed, setShowErrorSpeed] = useState(false);
   const [posX, setPosX] = useState('');
-  const [showErrorPosX, setShowErrorPosX] = useState(false);
   const [posY, setPosY] = useState('');
-  const [showErrorPosY, setShowErrorPosY] = useState(false);
+  const [showErrors, setShowErrors] = useState(false);
   const [direction, setDirection] = useState('Towards');
   const directions = ["Towards", "Backwards", "Downwards", "Upwards"]
 
@@ -36,38 +33,18 @@ export const AddVehicle = () => {
   async function onValChange(val, inp){
 
     if(inp === 'Vehicle Name'){
-      if(val === ''){
-        setShowErrorVehicleName(true)
-      } else {
-        setShowErrorVehicleName(false)
-      }
       setVehicleName(val);
     }
 
     if(inp === 'Speed'){
-      if(val === ''){
-        setShowErrorSpeed(true)
-      } else {
-        setShowErrorSpeed(false)
-      }
       setSpeed(val);
     }
 
     if(inp === 'Position X'){
-      if(val === ''){
-        setShowErrorPosX(true)
-      } else {
-        setShowErrorPosX(false)
-      }
       setPosX(val);
     }
 
     if(inp === 'Position Y'){
-      if(val === ''){
-        setShowErrorPosY(true)
-      } else {
-        setShowErrorPosY(false)
-      }
       setPosY(val);
     }
 
@@ -113,6 +90,7 @@ export const AddVehicle = () => {
         setPosX('')
         setPosY('')
         setDirection('')
+        setShowErrors(false)
       }  
   }
 
@@ -147,14 +125,12 @@ export const AddVehicle = () => {
           label="Vehicle Name"
           value={vehicleName}
           onChange={onValChange}
-          showError={showErrorVehicleName}
           ></InputBox>
 
           <InputBox
           label="Speed"
           value={speed}
           onChange={onValChange}
-          showError={showErrorSpeed}
           ></InputBox>
 
         </div>
@@ -165,14 +141,12 @@ export const AddVehicle = () => {
           label="Position X"
           value={posX}
           onChange={onValChange}
-          showError={showErrorPosX}
           ></InputBox>
 
           <InputBox
           label="Position Y"
           value={posY}
           onChange={onValChange}
-          showError={showErrorPosY}
           ></InputBox>
 
           <SelectBox

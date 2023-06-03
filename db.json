@@ -1,21 +1,36 @@
 {
   "scenarios": [
     {
-      "name": "test 1",
-      "time": "3s",
+      "name": "scenario 1",
+      "time": "2s",
       "vehicles": 0,
       "id": 1
+    },
+    {
+      "name": "scenario 2",
+      "time": "4s",
+      "vehicles": 0,
+      "id": 2
     }
   ],
   "vehicles": [
     {
-      "name": "test",
+      "name": "XUV 700",
       "posx": "100",
-      "posy": "100",
-      "speed": "8",
+      "posy": "200",
+      "speed": "190",
       "direction": "Towards",
       "scenarioId": "1",
       "id": 1
+    },
+    {
+      "name": "BMW 3",
+      "posx": "100",
+      "posy": "300",
+      "speed": "230",
+      "direction": "Downwards",
+      "scenarioId": "1",
+      "id": 2
     }
   ]
 }
